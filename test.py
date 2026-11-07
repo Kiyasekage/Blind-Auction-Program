@@ -1,10 +1,12 @@
 def highest_bidder(x):
-    name = ""
     highest = 0
+    name = ""
     for total in x:
         if x[total]>highest:
             highest = x[total]
-    return highest
+            name = total
+    print(f"The winner is {name} with a bid of {highest}")
+    
 print("Welcome to the blind auction!")
 ans = "Y"
 total_bidder = {}
@@ -14,3 +16,4 @@ while ans == "Y":
     total_bidder[name] = bid
     ans = input("Are there any bidder?(Y/N) ").upper()
 print(highest_bidder(total_bidder))
+
